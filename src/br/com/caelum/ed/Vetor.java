@@ -25,17 +25,13 @@ public class Vetor {
 	}
 
 	public boolean contem(Aluno aluno) {
-		boolean verifica = false;
-
-		for (int i = 0; i < alunos.length; i++) {
-			if (alunos[i].equals(aluno)) {
-				verifica = true;
-				break;
-			} else {
-				verifica = false;
+		
+		for (int i = 0; i < this.totalDeAlunos; i++) {
+			if (aluno.equals(this.alunos[i])) {
+				return true;
 			}
 		}
-		return verifica;
+			return false;
 	}
 
 	public int tamanho() {
