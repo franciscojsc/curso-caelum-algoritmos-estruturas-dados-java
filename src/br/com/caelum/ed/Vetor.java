@@ -4,6 +4,7 @@ public class Vetor {
 
 	private Aluno[] alunos = new Aluno[100];
 	private int totalDeAlunos = 0;
+	
 
 	public void adiciona(Aluno aluno) {
 		this.alunos[this.totalDeAlunos] = aluno;
@@ -17,7 +18,14 @@ public class Vetor {
 	}
 
 	public Aluno pega(int posicao) {
-		return alunos[posicao];
+		if(!this.posicaoOcupada(posicao)){
+			throw new IllegalArgumentException("Posição ocupada");
+		}
+		return this.alunos[posicao];
+	}
+	
+	private boolean posicaoOcupada(int posicao){
+		return posicao >= 0 && posicao < this.totalDeAlunos;
 	}
 
 	public void remove(int posicao) {
