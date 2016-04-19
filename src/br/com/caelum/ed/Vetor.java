@@ -39,14 +39,7 @@ public class Vetor {
 	}
 
 	public int tamanho() {
-		int tam = 0;
-
-		for (int i = 0; i < alunos.length; i++) {
-			if (alunos[i] != null) {
-				tam++;
-			}
-		}
-		return tam;
+		return this.totalDeAlunos;
 	}
 
 	public String toString() {
