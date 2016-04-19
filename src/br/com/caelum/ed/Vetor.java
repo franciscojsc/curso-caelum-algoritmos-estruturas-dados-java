@@ -11,9 +11,7 @@ public class Vetor {
 			if (alunos[i] == null) {
 				alunos[i] = aluno;
 				break;
-			} else {
-				System.out.println("Array cheio");
-			}
+			} 
 		}
 	}
 
