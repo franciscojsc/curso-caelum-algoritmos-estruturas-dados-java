@@ -15,8 +15,7 @@ public class TesteContemAluno {
 		lista.adiciona(a1);
 		lista.adiciona(a2);
 		
-		Aluno aluno1 = lista.pega(0);
-		Aluno aluno2 = lista.pega(1);
+		System.out.println(lista.pega(0));
 		
 		System.out.println(lista.contem(a1));
 		System.out.println(lista.contem(a2));
@@ -25,6 +24,12 @@ public class TesteContemAluno {
 		aluno.setNome("Ana");
 		
 		System.out.println(lista.contem(aluno));
+		
+		lista.adiciona("JOAOA");
+		System.out.println(lista);
+		
+		//ocorrerá um erro de convesão
+		//Aluno alunoX = (Aluno) lista.pega(2);
 	}
 
 }
