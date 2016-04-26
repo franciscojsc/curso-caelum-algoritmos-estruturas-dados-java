@@ -7,15 +7,15 @@ public class Vetor {
 	private Object[] objetos = new Object[100];
 	private int totalDeObjetos = 0;
 
-	/*
-	public void adiciona(Aluno aluno) { 
+	
+/*	public void adiciona(Aluno aluno) { 
 		for (int i = 0; i <this.objetos.length; i++) { 
 			if (this.objetos[i] == null) {
 		 		this.objetos[i] = aluno; break; 
 				} 
 	 		} 
 	 }
-	 */
+*/	 
 
 	public void adiciona(Object objeto) {
 		garanteEspaco();
