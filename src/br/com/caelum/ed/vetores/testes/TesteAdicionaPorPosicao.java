@@ -1,4 +1,7 @@
-package br.com.caelum.ed;
+package br.com.caelum.ed.vetores.testes;
+
+import br.com.caelum.ed.Aluno;
+import br.com.caelum.ed.vetores.Vetor;
 
 public class TesteAdicionaPorPosicao {
 
