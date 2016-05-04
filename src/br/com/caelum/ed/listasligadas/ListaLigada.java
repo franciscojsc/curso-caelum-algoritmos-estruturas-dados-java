@@ -67,6 +67,20 @@ public class ListaLigada {
 		return this.pegaCelula(posicao).getElemento();
 	}
 	
+	public void removeDoComeco(){
+	
+		if(!this.posicaoOcupada(0)){
+			throw new IllegalArgumentException("Posição não existe");
+		}
+		
+		this.primeira = this.primeira.getProxima();
+		this.totalDeElementos--;
+		
+		if(this.totalDeElementos == 0){
+			this.ultima = null;
+		}
+	}
+	
 	public String toString(){
 		
 		if(this.totalDeElementos == 0){
