@@ -63,6 +63,10 @@ public class ListaLigada {
 		return atual;
 	}
 	
+	public Object pega(int posicao){
+		return this.pegaCelula(posicao).getElemento();
+	}
+	
 	public String toString(){
 		
 		if(this.totalDeElementos == 0){
