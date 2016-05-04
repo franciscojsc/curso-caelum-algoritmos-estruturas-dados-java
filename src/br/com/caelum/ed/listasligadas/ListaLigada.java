@@ -31,6 +31,38 @@ public class ListaLigada {
 		
 	}
 	
+	public void adiciona(int posicao, Object elemento) {
+		
+		if (posicao == 0) {
+			this.adicionaNoComeco(elemento);
+		}else if(posicao == this.totalDeElementos){
+			this.adiciona(elemento);
+		}else{
+			Celula anterior = this.pegaCelula(posicao - 1);
+			Celula nova = new Celula(anterior.getProxima(), elemento);
+			anterior.setProxima(nova);
+			this.totalDeElementos++;
+		}
+		
+	}
+	
+	private boolean posicaoOcupada(int posicao){
+		return posicao >=0 && posicao < this.totalDeElementos;
+	}
+	
+	private Celula pegaCelula(int posicao){
+		if(!this.posicaoOcupada(posicao)){
+			throw new IllegalArgumentException("Posição não existe");
+		}
+		
+		Celula atual = primeira;
+		for (int i = 0; i < posicao; i++) {
+			atual = atual.getProxima();
+		}
+		
+		return atual;
+	}
+	
 	public String toString(){
 		
 		if(this.totalDeElementos == 0){
