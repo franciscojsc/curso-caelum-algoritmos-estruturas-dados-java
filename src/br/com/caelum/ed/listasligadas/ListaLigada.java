@@ -114,6 +114,10 @@ public class ListaLigada {
 		}
 	}
 
+	public int tamanho() {
+		return this.totalDeElementos;
+	}
+
 	public String toString() {
 
 		if (this.totalDeElementos == 0) {
