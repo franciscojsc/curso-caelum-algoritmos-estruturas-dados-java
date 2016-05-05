@@ -27,6 +27,7 @@ public class ListaLigada {
 		} else {
 			Celula nova = new Celula(elemento);
 			this.ultima.setProxima(nova);
+			nova.setAnterior(this.ultima);
 			this.ultima = nova;
 			this.totalDeElementos++;
 		}
