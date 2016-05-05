@@ -35,18 +35,19 @@ public class ListaLigada {
 	}
 
 	public void adiciona(int posicao, Object elemento) {
-
-		if (posicao == 0) {
+		if (posicao == 0) { // No começo.
 			this.adicionaNoComeco(elemento);
-		} else if (posicao == this.totalDeElementos) {
+		} else if (posicao == this.totalDeElementos) { // No fim.
 			this.adiciona(elemento);
 		} else {
 			Celula anterior = this.pegaCelula(posicao - 1);
+			Celula proxima = anterior.getProxima();
 			Celula nova = new Celula(anterior.getProxima(), elemento);
+			nova.setAnterior(anterior);
 			anterior.setProxima(nova);
+			proxima.setAnterior(nova);
 			this.totalDeElementos++;
 		}
-
 	}
 
 	private boolean posicaoOcupada(int posicao) {
