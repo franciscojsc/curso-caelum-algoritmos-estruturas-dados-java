@@ -118,6 +118,17 @@ public class ListaLigada {
 		return this.totalDeElementos;
 	}
 
+	public boolean contem(Object elemento) {
+		Celula atual = this.primeira;
+		while (atual != null) {
+			if (atual.getElemento().equals(elemento)) {
+				return true;
+			}
+			atual = atual.getProxima();
+		}
+		return false;
+	}
+
 	public String toString() {
 
 		if (this.totalDeElementos == 0) {
