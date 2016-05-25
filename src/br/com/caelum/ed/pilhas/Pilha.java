@@ -17,6 +17,8 @@ public class Pilha {
 		return this.pecas.remove(this.pecas.size()-1);
 	}
 	
-	
+	public boolean vazia(){
+		return this.pecas.size() == 0;
+	}
 
 }
