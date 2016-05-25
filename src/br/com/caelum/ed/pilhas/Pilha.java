@@ -9,5 +9,10 @@ public class Pilha {
 	
 	private List<Peca> pecas = new LinkedList<>();
 	
+	public void insere(Peca peca){
+		this.pecas.add(peca);
+	}
 	
+	
+
 }
