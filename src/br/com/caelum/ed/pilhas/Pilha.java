@@ -13,6 +13,10 @@ public class Pilha {
 		this.pecas.add(peca);
 	}
 	
+	public Peca remove(){
+		return this.pecas.remove(this.pecas.size()-1);
+	}
+	
 	
 
 }
