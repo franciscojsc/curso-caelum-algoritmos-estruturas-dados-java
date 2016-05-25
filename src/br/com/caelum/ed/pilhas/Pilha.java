@@ -3,22 +3,22 @@ package br.com.caelum.ed.pilhas;
 import java.util.LinkedList;
 import java.util.List;
 
-import br.com.caelum.ed.Peca;
+
 
 public class Pilha {
 	
-	private List<Peca> pecas = new LinkedList<>();
+	private List<Object> objetos = new LinkedList<>();
 	
-	public void insere(Peca peca){
-		this.pecas.add(peca);
+	public void insere(Object object){
+		this.objetos.add(object);
 	}
 	
-	public Peca remove(){
-		return this.pecas.remove(this.pecas.size()-1);
+	public Object remove(){
+		return this.objetos.remove(this.objetos.size()-1);
 	}
 	
 	public boolean vazia(){
-		return this.pecas.size() == 0;
+		return this.objetos.size() == 0;
 	}
 
 }
