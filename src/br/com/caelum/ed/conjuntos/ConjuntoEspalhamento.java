@@ -15,8 +15,18 @@ public class ConjuntoEspalhamento {
 		}
 	}
 
+	private int calculaCodigoDeEspalhamento(String palavra) {
+		int codigo = 1;
+		for (int i = 0; i < palavra.length(); i++) {
+			codigo = 31 * codigo + palavra.charAt(i);
+		}
+		return codigo;
+	}
+
 	private int calculaIndiceTabela(String palavra) {
-		return palavra.toLowerCase().charAt(0) % 26;
+		int codigoDeEspalhamento = this.calculaCodigoDeEspalhamento(palavra);
+		codigoDeEspalhamento = Math.abs(codigoDeEspalhamento);
+		return codigoDeEspalhamento % tabela.size();
 	}
 
 	public void adiciona(String palavra) {
@@ -30,7 +40,7 @@ public class ConjuntoEspalhamento {
 	}
 
 	public void remove(String palavra) {
-		if(this.contem(palavra)){
+		if (this.contem(palavra)) {
 			int indice = this.calculaIndiceTabela(palavra);
 			List<String> lista = this.tabela.get(indice);
 			lista.remove(palavra);
@@ -41,23 +51,33 @@ public class ConjuntoEspalhamento {
 	public boolean contem(String palavra) {
 		int indice = this.calculaIndiceTabela(palavra);
 		List<String> lista = this.tabela.get(indice);
-		
+
 		return lista.contains(palavra);
 	}
 
 	public List<String> pegaTodas() {
 		List<String> palavras = new ArrayList<>();
-		
+
 		for (int i = 0; i < tabela.size(); i++) {
 			palavras.addAll(this.tabela.get(i));
 		}
 		return palavras;
 	}
-	
+
 	private int tamanho = 0;
 
-	public int tamanho() {	
+	public int tamanho() {
 		return this.tamanho;
 	}
 
+	public void imprimeTabela() {
+		for (List<String> lista : this.tabela) {
+
+			System.out.print("[");
+			for (int i = 0; i < lista.size(); i++) {
+				System.out.print("*");
+			}
+			System.out.println("]");
+		}
+	}
 }
