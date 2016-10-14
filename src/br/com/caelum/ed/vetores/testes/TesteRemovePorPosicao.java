@@ -1,6 +1,9 @@
-package br.com.caelum.ed;
+package br.com.caelum.ed.vetores.testes;
 
-public class TestePegarPorPosicao {
+import br.com.caelum.ed.Aluno;
+import br.com.caelum.ed.vetores.Vetor;
+
+public class TesteRemovePorPosicao {
 
 	public static void main(String[] args) {
 
@@ -15,11 +18,9 @@ public class TestePegarPorPosicao {
 		lista.adiciona(a1);
 		lista.adiciona(a2);
 		
-		Aluno aluno1 = lista.pega(0);
-		Aluno aluno2 = lista.pega(1);
+		lista.remove(0);
 		
-		System.out.println(aluno1);
-		System.out.println(aluno2);
+		System.out.println(lista);
 	}
 
 }
